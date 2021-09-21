@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getxproject/Controller/Controller.dart';
+import 'package:getxproject/View/SecondPage.dart';
 
 class View extends StatelessWidget {
   const View({Key? key}) : super(key: key);
@@ -36,6 +37,11 @@ class View extends StatelessWidget {
                     child: Icon(Icons.remove))
               ],
             ),
+            MaterialButton(
+                child: Text("Go to Second Page"),
+                onPressed: () {
+                  Get.toNamed('/second');
+                })
           ],
         ),
       ),
