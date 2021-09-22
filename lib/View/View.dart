@@ -8,6 +8,7 @@ class View extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Controller controller = Get.put(Controller());
+
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
@@ -41,7 +42,28 @@ class View extends StatelessWidget {
                 child: Text("Go to Second Page"),
                 onPressed: () {
                   Get.toNamed('/second');
-                })
+                }),
+            MaterialButton(
+                child: Text("Open Snakbar"),
+                onPressed: () {
+                  Get.snackbar("GetX", "Hello World!");
+                }),
+            MaterialButton(
+                child: Text("Flutter Snakbar"),
+                onPressed: () {
+                  final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                }),
+            MaterialButton(
+                child: Text("Open Dialog Box"),
+                onPressed: () {
+                  Get.defaultDialog(title: "Hello world !", middleText: "Hii");
+                }),
+            MaterialButton(
+                child: Text("Dark Theme"),
+                onPressed: () {
+                  Get.changeTheme(ThemeData.dark());
+                }),
           ],
         ),
       ),
